@@ -56,4 +56,9 @@ func (o *Omap) Delete(k interface{}) {
 		delete(o.omap, k)
 		o.keys = append(o.keys[:e.index], o.keys[e.index+1:]...)
 	}
+	for i:=e.index; i<len(o.keys); i++ {
+		e, _ = o.omap[o.keys[i]]
+		e.index--
+		o.omap[o.keys[i]] = e
+	}
 }
