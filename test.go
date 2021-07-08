@@ -35,6 +35,8 @@ func main() {
 
 	o.Insert(1, "new", "floop")
 	fmt.Println(o)
+	o.Swap(1,2)
+	fmt.Println(o)
 	o.Delete("a")
 	fmt.Println(o)
 	o.Delete(22)

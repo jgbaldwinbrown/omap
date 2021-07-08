@@ -6,6 +6,8 @@ type Omapper interface {
 	Set(interface{}, interface{})
 	Len() int
 	Delete(interface{})
+	Insert(int, interface{}, interface{})
+	Swap(int, int)
 }
 
 type omapEntry struct {
@@ -77,4 +79,18 @@ func (o *Omap) Insert(i int, k interface{}, v interface{}) {
 		e.index++
 		o.omap[new_k] = e
 	}
+}
+
+func (o *Omap) Swap(i1 int, i2 int) {
+	k1 := o.keys[i1]
+	k2 := o.keys[i2]
+	o.keys[i1], o.keys[i2] = k2, k1
+
+	e, _ := o.omap[k1]
+	e.index = i2
+	o.omap[k1] = e
+
+	e, _ = o.omap[k2]
+	e.index = i1
+	o.omap[k2] = e
 }
