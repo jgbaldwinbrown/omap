@@ -34,6 +34,8 @@ func main() {
 	}
 	o.Delete("a")
 	fmt.Println(o)
+	o.Delete(22)
+	fmt.Println(o)
 
 	// o2 := OmapSortable()
 	// o2.Set(3, "three")
