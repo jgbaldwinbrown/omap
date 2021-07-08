@@ -64,7 +64,17 @@ func (o *Omap) Delete(k interface{}) {
 }
 
 func (o *Omap) Insert(i int, k interface{}, v interface{}) {
-	e, ok := o.omap[k]
-	of ok {
-	
+	_, ok := o.omap[k]
+	if ok {
+		o.Delete(k)
+	}
+	o.keys = append(o.keys[:i+1], o.keys[i:]...)
+	o.keys[i] = k
+	o.omap[k] = omapEntry{i, v}
+	for index := i+1; index < len(o.keys); index++ {
+		new_k := o.keys[index]
+		e, _ := o.omap[new_k]
+		e.index++
+		o.omap[new_k] = e
+	}
 }

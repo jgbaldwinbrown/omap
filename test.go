@@ -32,9 +32,14 @@ func main() {
 		val, ok := o.Get(o.GetKey(i))
 		fmt.Println(i, o.GetKey(i), val, ok)
 	}
+
+	o.Insert(1, "new", "floop")
+	fmt.Println(o)
 	o.Delete("a")
 	fmt.Println(o)
 	o.Delete(22)
+	fmt.Println(o)
+	o.Delete("new")
 	fmt.Println(o)
 
 	// o2 := OmapSortable()
