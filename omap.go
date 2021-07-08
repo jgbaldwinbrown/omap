@@ -1,7 +1,7 @@
 package omap
 
 type Omapper interface {
-	Get(interface{}) (interface{}, error)
+	Get(interface{}) (interface{}, bool)
 	GetKey(int) interface{}
 	Set(interface{}, interface{})
 	Len() int
