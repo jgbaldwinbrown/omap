@@ -3,25 +3,25 @@ package main
 import (
 	"fmt"
 	"local/jgbaldwinbrown/omap"
-	"sort"
+	// "sort"
 )
 
-type OmapSortable *omap.Omapper
-
-func (o OmapSortable) Swap(i1 int, i2 int) {
-	k1 = o.GetKey(i1)
-	k2 = o.GetKey(i2)
-	v1, _ = o.Get(k1)
-	v2, _ = o.Get(k2)
-	o.Delete(k1)
-	o.Delete(k2)
-	o.Insert(i1, k2, v2)
-	o.
-}
-
-type ByNum struct {omap.Omapper}
-
-func (b ByNum) Less(i, j int) bool {return b.Omapper.Get(i) < b.Omapper.Get(j)}
+// type OmapSortable *omap.Omapper
+// 
+// func (o OmapSortable) Swap(i1 int, i2 int) {
+// 	k1 = o.GetKey(i1)
+// 	k2 = o.GetKey(i2)
+// 	v1, _ = o.Get(k1)
+// 	v2, _ = o.Get(k2)
+// 	o.Delete(k1)
+// 	o.Delete(k2)
+// 	o.Insert(i1, k2, v2)
+// 	o.
+// }
+// 
+// type ByNum struct {omap.Omapper}
+// 
+// func (b ByNum) Less(i, j int) bool {return b.Omapper.Get(i) < b.Omapper.Get(j)}
 
 func main() {
 	o := omap.NewOmap()
@@ -35,11 +35,11 @@ func main() {
 	o.Delete("a")
 	fmt.Println(o)
 
-	o2 := OmapSortable()
-	o2.Set(3, "three")
-	o2.Set(2, "two2")
-	o2.Set(1, "o2ne")
-	fmt.Println(o2)
-	sort.Sort(o2)
-	fmt.Println(o2)
+	// o2 := OmapSortable()
+	// o2.Set(3, "three")
+	// o2.Set(2, "two2")
+	// o2.Set(1, "o2ne")
+	// fmt.Println(o2)
+	// sort.Sort(o2)
+	// fmt.Println(o2)
 }
