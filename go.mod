@@ -1,4 +1,4 @@
-module github.com/jgbaldwinbrown/omap/omap
+module github.com/jgbaldwinbrown/omap
 
 go 1.18
 
