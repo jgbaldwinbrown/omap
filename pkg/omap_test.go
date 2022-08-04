@@ -23,8 +23,8 @@ func TestMap(t *testing.T) {
 	fmt.Println(m)
 	r := m.Range()
 	for r.Next() {
-		key, kok := r.Key()
-		val, vok := r.Val()
-		fmt.Println(key, val, kok, vok)
+		key := r.Key()
+		val := r.Val()
+		fmt.Println(key, val)
 	}
 }

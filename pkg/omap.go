@@ -67,18 +67,10 @@ func (o *Range[Key, Value]) Next() bool {
 	return o.Current != nil
 }
 
-func (o *Range[TKey, TValue]) Key() (TKey, bool) {
-	var zero TKey
-	if o.Current == nil {
-		return zero, false
-	}
-	return o.Current.Val, true
+func (o *Range[TKey, TValue]) Key() TKey {
+	return o.Current.Val
 }
 
-func (o *Range[TKey, TValue]) Val() (TValue, bool) {
-	var zero TValue
-	if o.Current == nil {
-		return zero, false
-	}
-	return o.Map.Map[o.Current.Val].Val, true
+func (o *Range[TKey, TValue]) Val() TValue {
+	return o.Map.Map[o.Current.Val].Val
 }
