@@ -1,4 +1,4 @@
-package main
+package omap
 
 type LlNode[T any] struct {
 	Next *LlNode[T]

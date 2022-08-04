@@ -1,4 +1,4 @@
-package main
+package omap
 
 type MapEntry[Key comparable, Value any] struct {
 	Node *LlNode[Key]
