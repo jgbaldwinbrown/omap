@@ -47,6 +47,10 @@ func (o *Map[Key, Value]) Del(k Key) bool {
 	return ok
 }
 
+func (o *Map[Key, Value]) Len() int {
+	return len(o.Map)
+}
+
 type Range[Key comparable, Value any] struct {
 	Map *Map[Key, Value]
 	Started bool
